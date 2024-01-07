@@ -1,41 +1,44 @@
-[강의 소스코드는 여기에](https://github.com/zerocho/next-app-router-z)
+##  create-next-app@laste
+  
+- 퍼블릭: 넥스트 서버에서 누구나 접근 
+- src 
+    - app :  라우팅
 
-[z.com](https://z.nodebird.com) 소스 코드입니다.
 
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
+next dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/default.tsx`. The page auto-updates as you edit the file.
+### 브라우저 주소 app 폴더에 반영
+- RootLayout: 레이아웃이 children을 받아서 page을 렌더링 시켜줌
+  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 폴더 구조
+-app
+  -(afterLogin) // 실제 url에는 영향을 끼치지 않고 그룹화 할수 있다
+  not-found.tsx
+ -i
+  -flow
+    - login
+    - signup
+ - compose
+   - tweet
+     - page.tsx
+ - explore
+   - page.tsx
+ - home
+   - layout.tsx // 홈의 개별적은 레이아  RootLayout -> HomeLayout-> Home
+ - [username]// 다이나믹 라우팅 slug
+   - status
+     - [id]
+       - page.tsx
+     - page.tsx
+ - layout.tsx // 전체의 레이아웃
 
-## Learn More
+### templete 와 layout의 차이
+- 리랜더링이 되구 싶으면 templete=> 페이지를 넘너뒬때 기록하고 싶을때 gmt 하고 싶을대 
+ 
+### styles
+- 단위 dvw/dvh
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### iterceoting Routing /  Parallel Routing
